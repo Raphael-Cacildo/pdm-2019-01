@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Soma</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<form (ngSubmit)="soma()">
+	<ion-input type="number" placeholder="N1" name="n1" [(ngModel)]="n1"></ion-input>
+	<ion-input type="number" placeholder="N2" name="n2" [(ngModel)]="n2"></ion-input>
+	<ion-button type="submit">Enviar</ion-button>
+	</form>
+
+	<h4>{{saida}}</h4>
+</ion-content>

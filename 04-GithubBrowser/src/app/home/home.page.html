@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Github Browser</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+	<form (ngSubmit)="pesquisa()">
+	<ion-input type="text" placeholder="Pesquisa:" name="nome" [(ngModel)]="nome"></ion-input>
+	<ion-button type="submit">Enviar</ion-button>
+	</form>
+
+    <ion-list *ngFor="let r of repositorios; let i = index" no-lines>
+        <ion-item>
+            <ion-label>{{ r.name }}</ion-label>
+            <ion-button color="light" (click)="detalhes(r)">
+                <ion-icon slot="icon-only" name="search"></ion-icon>
+            </ion-button>
+
+        </ion-item>
+    </ion-list>
+
+    <ion-toolbar [class.hide]="repositorios.length < 1">
+        <ion-buttons slot="start">
+            <ion-button disabled="{{pagina < 2}}" (click)="anterior()">
+                <ion-icon slot="icon-only" name="arrow-dropleft-circle"></ion-icon>
+            </ion-button>
+            <ion-button disabled="{{ ((pagina + 1) * itens_por_pagina) > 1000 }}" (click)="proximo()">
+                <ion-icon slot="icon-only" name="arrow-dropright-circle"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+</ion-content>

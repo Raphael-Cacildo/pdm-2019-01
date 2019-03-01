@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Hello!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<form (ngSubmit)="onSubmit()">
+	<ion-input type="text" placeholder="Nome" name="nome" [(ngModel)]="nome"></ion-input>
+	<ion-button type="submit">Enviar</ion-button>
+	</form>
+
+	<h4>{{mensagem}}</h4>
+</ion-content>

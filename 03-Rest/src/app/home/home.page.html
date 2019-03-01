@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      REST
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<form (ngSubmit)="pesquisa()">
+	<ion-input type="text" placeholder="Nome do repositório:" name="nome" [(ngModel)]="nome"></ion-input>
+	<ion-button type="submit">Enviar</ion-button>
+	</form>
+
+    <ion-list *ngFor="let r of repositorios; let i = index" no-lines>
+        <ion-item>ID: {{ r.id }} - Nome: {{ r.name }} - URL: {{ r.url }}</ion-item>
+    </ion-list>
+	
+</ion-content>
